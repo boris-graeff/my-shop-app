@@ -30,6 +30,12 @@
 </script>
 
 <style scoped lang="scss">
+  .cart {
+    li:nth-child(even) {
+      background: #f1f1f1;
+    }
+  }
+
   .placeholder {
     color: grey;
     font-size: 20px;
