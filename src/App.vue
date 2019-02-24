@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <AppHeader />
     <div class="content">
       <router-view/>
@@ -19,4 +19,11 @@
 
 <style lang="scss">
   @import '~@/style/reset.scss';
+</style>
+
+<style lang="scss" scoped>
+  .app {
+    max-width: 1000px;
+    margin: auto;
+  }
 </style>
