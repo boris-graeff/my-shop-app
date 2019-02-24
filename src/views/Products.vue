@@ -2,14 +2,7 @@
   <div class="products">
     <ul>
       <li v-for="product in products" :key="product.key" class="product">
-        <img :src="product.thumbnail.image_url" :alt="`${product.name} thumbnail`" />
-        <div class="name">{{ product.name }}</div>
-        <div class="description">
-          {{ product.tagline }}
-        </div>
-        <button type="button" @click="addProductToCart(product)">
-          Add to cart
-        </button>
+        <ProductTile :product="product" />
       </li>
     </ul>
   </div>
@@ -17,6 +10,7 @@
 
 <script>
   import { mapState, mapActions } from 'vuex'
+  import ProductTile from './products/ProductTile'
 
   export default {
     name: 'products',
@@ -40,9 +34,11 @@
     },
     methods: {
       ...mapActions({
-        getProducts: 'products/getProducts',
-        addProductToCart: 'cart/addProduct'
+        getProducts: 'products/getProducts'
       })
+    },
+    components: {
+      ProductTile
     }
   }
 </script>
@@ -56,21 +52,11 @@
     }
 
     li {
-      width: 20%;
-      padding: 20px;
-    }
-  }
+      width: 33.33%;
 
-  .product {
-    padding: 20px;
-
-    .name {
-      font-weight: bold;
-    }
-
-    button {
-      border: none;
-      padding: 10px;
+      &:nth-child(odd) {
+        background: #f1f1f1;
+      }
     }
   }
 </style>

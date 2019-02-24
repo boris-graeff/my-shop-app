@@ -1,5 +1,7 @@
 <template>
   <header>
+    <h1>My shop app</h1>
+
     <nav>
       <ul>
         <li>
@@ -28,16 +30,31 @@
 
 
 <style scoped lang="scss">
+  @import '~@/style/vars';
+
   header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $black;
+
+    nav {
+      display: flex;
+    }
+
     ul {
       display: flex;
     }
 
     li {
       padding: 10px;
+    }
 
-      :not(:last-child):after {
-        content: ' | ';
+    a {
+      text-transform: uppercase;
+
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

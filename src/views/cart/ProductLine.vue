@@ -47,10 +47,5 @@
     .name {
       font-weight: bold;
     }
-
-    button {
-      border: none;
-      padding: 10px;
-    }
   }
 </style>
