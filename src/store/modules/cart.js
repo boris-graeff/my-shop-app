@@ -14,5 +14,8 @@ export default {
     addProduct (store, product) {
       store.commit(ADD_PRODUCT, product)
     }
+  },
+  getters: {
+    cartSize: ({ products }) => products.length,
   }
 }

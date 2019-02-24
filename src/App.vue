@@ -1,39 +1,22 @@
 <template>
   <div id="app">
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <router-link :to="{name: 'products'}">Products</router-link>
-          </li>
-          <li>
-            <router-link :to="{name: 'cart'}">Cart</router-link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <AppHeader />
     <div class="content">
       <router-view/>
     </div>
   </div>
 </template>
 
-<style lang="scss">
-  @import '~@/style/reset.scss';
-</style>
+<script>
+  import AppHeader from '@/components/AppHeader'
 
-<style scoped lang="scss">
-  header {
-    ul {
-      display: flex;
-    }
-
-    li {
-      padding: 10px;
-
-      :not(:last-child):after {
-        content: ' | ';
-      }
+  export default {
+    components: {
+      AppHeader
     }
   }
+</script>
+
+<style lang="scss">
+  @import '~@/style/reset.scss';
 </style>
