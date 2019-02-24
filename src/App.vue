@@ -26,8 +26,6 @@
   header {
     ul {
       display: flex;
-      list-style: none;
-      padding: 0;
     }
 
     li {
