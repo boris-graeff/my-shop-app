@@ -1,4 +1,5 @@
 const ADD_PRODUCT = 'ADD_PRODUCT'
+const REMOVE_PRODUCTS = 'REMOVE_PRODUCTS'
 
 export default {
   namespaced: true,
@@ -8,11 +9,17 @@ export default {
   mutations: {
     [ADD_PRODUCT] (state, product) {
       state.products.push(product)
+    },
+    [REMOVE_PRODUCTS] (state, product) {
+      state.products = state.products.filter(({ id }) => id !== product.id)
     }
   },
   actions: {
     addProduct (store, product) {
       store.commit(ADD_PRODUCT, product)
+    },
+    removeProducts (store, product) {
+      store.commit(REMOVE_PRODUCTS, product)
     }
   },
   getters: {

@@ -10,14 +10,24 @@
         {{ product.tagline }}
       </div>
     </div>
+    <div>
+      <button type="button" @click="removeProducts(product)">Remove</button>
+    </div>
   </div>
 </template>
 
 <script>
+  import { mapActions } from 'vuex'
+
   export default {
     props: {
       product: Object,
       count: Number
+    },
+    methods: {
+      ...mapActions({
+        removeProducts: 'cart/removeProducts'
+      })
     }
   }
 </script>
@@ -36,6 +46,11 @@
 
     .name {
       font-weight: bold;
+    }
+
+    button {
+      border: none;
+      padding: 10px;
     }
   }
 </style>
