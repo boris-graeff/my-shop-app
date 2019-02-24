@@ -7,6 +7,9 @@
         <div class="description">
           {{ product.tagline }}
         </div>
+        <button type="button" @click="addProductToCart(product)">
+          Add to cart
+        </button>
       </li>
     </ul>
   </div>
@@ -36,8 +39,9 @@
       })
     },
     methods: {
-      ...mapActions('products', {
-        getProducts: 'getProducts'
+      ...mapActions({
+        getProducts: 'products/getProducts',
+        addProductToCart: 'cart/addProduct'
       })
     }
   }
@@ -62,6 +66,11 @@
 
     .title {
       font-weight: bold;
+    }
+
+    button {
+      border: none;
+      padding: 10px;
     }
   }
 </style>

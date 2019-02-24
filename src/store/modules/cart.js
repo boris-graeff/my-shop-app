@@ -11,7 +11,7 @@ export default {
     }
   },
   actions: {
-    async addProduct (store, product) {
+    addProduct (store, product) {
       store.commit(ADD_PRODUCT, product)
     }
   }
