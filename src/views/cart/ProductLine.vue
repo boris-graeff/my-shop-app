@@ -66,4 +66,11 @@
   .content {
     flex: 1;
   }
+
+
+  @media screen and (max-width: 700px){
+    .product-line {
+      flex-direction: column;
+    }
+  }
 </style>

@@ -59,4 +59,10 @@
       }
     }
   }
+
+  @media screen and (max-width: 600px){
+    .products li {
+      width: 100%;
+    }
+  }
 </style>

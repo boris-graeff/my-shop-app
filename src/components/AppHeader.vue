@@ -37,6 +37,7 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid $black;
+    padding: 20px;
 
     nav {
       display: flex;
@@ -56,6 +57,12 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    h1 {
+      font-size: 14px;
     }
   }
 </style>
