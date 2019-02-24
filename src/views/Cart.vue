@@ -1,9 +1,9 @@
 <template>
   <div class="cart">
-    <ul v-if="products.length">
-      <li v-for="product in products" :key="product.key"
+    <ul v-if="groupedProducts.length">
+      <li v-for="{ product, count } in groupedProducts" :key="product.key"
           class="product">
-        <ProductLine :product="product"/>
+        <ProductLine :product="product" :count="count"/>
       </li>
     </ul>
     <div v-else class="placeholder">
@@ -13,14 +13,14 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import { mapGetters } from 'vuex'
   import ProductLine from './cart/ProductLine'
 
   export default {
     name: 'cart',
     computed: {
-      ...mapState('cart', {
-        products: state => state.products
+      ...mapGetters({
+        groupedProducts: 'cart/groupedProducts'
       })
     },
     components: {

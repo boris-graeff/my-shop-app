@@ -1,5 +1,6 @@
 <template>
   <div class="product-line">
+    <div>x{{ count }}</div>
     <div>
       <img :src="product.thumbnail.image_url" :alt="`${product.name} thumbnail`" />
     </div>
@@ -15,7 +16,8 @@
 <script>
   export default {
     props: {
-      product: Object
+      product: Object,
+      count: Number
     }
   }
 </script>
