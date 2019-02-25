@@ -13,7 +13,7 @@ describe('Check cart flow', () => {
     cy.visit('/#/cart')
     const products = cy.get('.product')
     products.should('have.length', 1)
-    products.first().find('.count').contains('x2');
+    products.first().find('.count').contains('x2')
 
     // Remove products
     cy.get('.product').first().find('button').click()

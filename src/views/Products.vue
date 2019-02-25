@@ -9,38 +9,37 @@
 </template>
 
 <script>
-  import { mapState, mapActions } from 'vuex'
-  import ProductTile from './products/ProductTile'
+import { mapState, mapActions } from 'vuex'
+import ProductTile from './products/ProductTile'
 
-  export default {
-    name: 'products',
-    data() {
-      return {
-        isLoading: true
-      }
-    },
-    async mounted () {
-      try {
-        await this.getProducts()
-      }
-      finally {
-        this.isLoading = false
-      }
-    },
-    computed: {
-      ...mapState('products', {
-        products: state => state.products
-      })
-    },
-    methods: {
-      ...mapActions({
-        getProducts: 'products/getProducts'
-      })
-    },
-    components: {
-      ProductTile
+export default {
+  name: 'products',
+  data () {
+    return {
+      isLoading: true
     }
+  },
+  async mounted () {
+    try {
+      await this.getProducts()
+    } finally {
+      this.isLoading = false
+    }
+  },
+  computed: {
+    ...mapState('products', {
+      products: state => state.products
+    })
+  },
+  methods: {
+    ...mapActions({
+      getProducts: 'products/getProducts'
+    })
+  },
+  components: {
+    ProductTile
   }
+}
 </script>
 
 <style scoped lang="scss">

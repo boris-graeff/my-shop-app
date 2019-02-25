@@ -27,7 +27,7 @@ export default {
     groupedProducts: ({ products }) => products.reduce((res, product) => {
       const sameProduct = res.find(group => group.product.id === product.id)
       if (sameProduct) sameProduct.count += 1
-      else res.push({ product, count: 1})
+      else res.push({ product, count: 1 })
       return res
     }, [])
   }

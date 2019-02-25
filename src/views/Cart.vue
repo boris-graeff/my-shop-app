@@ -13,20 +13,20 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
-  import ProductLine from './cart/ProductLine'
+import { mapGetters } from 'vuex'
+import ProductLine from './cart/ProductLine'
 
-  export default {
-    name: 'cart',
-    computed: {
-      ...mapGetters({
-        groupedProducts: 'cart/groupedProducts'
-      })
-    },
-    components: {
-      ProductLine
-    }
+export default {
+  name: 'cart',
+  computed: {
+    ...mapGetters({
+      groupedProducts: 'cart/groupedProducts'
+    })
+  },
+  components: {
+    ProductLine
   }
+}
 </script>
 
 <style scoped lang="scss">

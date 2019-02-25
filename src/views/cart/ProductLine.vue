@@ -19,19 +19,19 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
-  export default {
-    props: {
-      product: Object,
-      count: Number
-    },
-    methods: {
-      ...mapActions({
-        removeProducts: 'cart/removeProducts'
-      })
-    }
+export default {
+  props: {
+    product: Object,
+    count: Number
+  },
+  methods: {
+    ...mapActions({
+      removeProducts: 'cart/removeProducts'
+    })
   }
+}
 </script>
 
 <style scoped lang="scss">
@@ -66,7 +66,6 @@
   .content {
     flex: 1;
   }
-
 
   @media screen and (max-width: 700px){
     .product-line {

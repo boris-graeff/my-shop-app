@@ -12,18 +12,18 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
-  export default {
-    props: {
-      product: Object
-    },
-    methods: {
-      ...mapActions({
-        addProductToCart: 'cart/addProduct'
-      })
-    }
+export default {
+  props: {
+    product: Object
+  },
+  methods: {
+    ...mapActions({
+      addProductToCart: 'cart/addProduct'
+    })
   }
+}
 </script>
 
 <style scoped lang="scss">

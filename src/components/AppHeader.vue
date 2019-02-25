@@ -16,18 +16,17 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 
-  export default {
-    name: 'AppHeader',
-    computed: {
-      ...mapGetters({
-        cartSize: 'cart/cartSize'
-      })
-    }
+export default {
+  name: 'AppHeader',
+  computed: {
+    ...mapGetters({
+      cartSize: 'cart/cartSize'
+    })
   }
+}
 </script>
-
 
 <style scoped lang="scss">
   @import '~@/style/vars';
